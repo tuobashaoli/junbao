@@ -108,12 +108,12 @@ def comment(uid,user,title,url="https://www.douban.com/group/topic/251224257/"):
         all_rv = ["谢谢阿北，不要殉我们"]
     if "吃什么" in title or "次什么" in title:
         all_rv = ["炒面","火锅","麻辣香锅","米线","鱼粉","煲仔饭","麻辣烫","kfc","焖饭","猪脚饭","蛋炒饭","饺子","肠粉","烤鱼","辣子鸡","小龙虾"]
-    if re.findall("俊宝.*点儿",title):
-        all_rv = getTrivia()
     if user.strip() in all_rv_dict:
         all_rv=all_rv_dict[user.strip()]
     if uid.strip() in all_rv_dict2:
         all_rv = all_rv_dict2[uid.strip()]
+    if re.findall("俊宝.*点儿",title):
+        all_rv = getTrivia()
     night_start_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '22:00', '%Y-%m-%d%H:%M')
     night_end_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '23:59', '%Y-%m-%d%H:%M')
 
